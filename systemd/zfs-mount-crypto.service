@@ -1,0 +1,12 @@
+[Unit]
+Description=ZFS crypt mount
+After=local-fs.target zfs-mount.service zfs-import-cache.service
+Before=remote-fs.target docker.service libvirtd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/opt/bengalfox/zfs-mount.sh
+
+[Install]
+WantedBy=multi-user.target
