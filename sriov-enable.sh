@@ -4,7 +4,8 @@ set -e
 DEVB=enp131s0f0
 DEV="${DEVB}np0"
 MAC_PREFIX="00:16:3E:CA:7E"
-NUM_VFS="$(cat "/sys/class/net/$DEV/device/sriov_totalvfs")"
+#NUM_VFS="$(cat "/sys/class/net/$DEV/device/sriov_totalvfs")"
+NUM_VFS="15"
 
 echo 1 > "/sys/class/net/$DEV/device/sriov_drivers_autoprobe"
 
