@@ -1,0 +1,19 @@
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/md0p1 during curtin installation
+/dev/disk/by-id/md-uuid-c8b5faab:0297645b:29e92f49:a80e7781-part1 / ext4 defaults 0 1
+# /boot/efi was on /dev/nvme0n1p1 during curtin installation
+/dev/disk/by-uuid/E834-8473 /boot/efi vfat defaults,nofail 0 1
+/dev/disk/by-uuid/E81B-D4DD /boot/efi2 vfat defaults,nofail 0 1
+/dev/disk/by-uuid/272B-4CE1 /mnt/keydisk vfat defaults,ro,fmask=0077,dmask=0077 0 1
+/dev/mapper/znvme-docker /var/lib/docker ext4 defaults 0 2
+/dev/disk/by-uuid/e0e1cb38-0f46-417b-a291-db06a100f2aa /mnt/tmpdrv ext4 defaults,nofail 0 1
+/dev/disk/by-uuid/2d84babf-2184-49b1-ab50-1eeae7fb94da /mnt/zssd ext4 defaults 0 2
+/dev/disk/by-uuid/c66d710c-4fd4-4967-89b7-8f8e1c7ba8f1 /mnt/zhdd ext4 defaults 0 2
+/mnt/zssd/nas/torrent /mnt/zhdd/nas/torrent none defaults,bind 0 0
+/mnt/zssd/nas/usenet /mnt/zhdd/nas/usenet none defaults,bind 0 0
