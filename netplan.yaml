@@ -1,15 +1,14 @@
-# This is the network config written by 'subiquity'
 network:
   ethernets:
     enp131s0f0np0:
       mtu: 9000
       addresses:
-      - 10.6.10.1/16
+      - 10.2.11.1/16
       routes:
       - to: default
-        via: 10.6.0.1
+        via: 10.2.0.1
       nameservers:
         addresses:
-        - 10.6.0.53
+        - 10.2.0.53
         search:
         - foxden.network

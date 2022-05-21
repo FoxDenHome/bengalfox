@@ -7,7 +7,7 @@ Before=mnt-zssd.mount mnt-zhdd.mount docker.service libvirtd.service
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-ExecStart=/opt/bengalfox/mdraid-enable.sh
+ExecStart=/opt/nas/mdraid-enable.sh
 
 [Install]
 WantedBy=multi-user.target
