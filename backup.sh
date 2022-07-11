@@ -6,4 +6,6 @@ runbackup() {
 }
 
 runbackup 'b2:bengalfox-backups:/'
-runbackup 'sftp:nas@icefox.doridian.net:/mnt/zhdd/nas/restic'
+
+REST_SERVER_PASSWORD="$(cat /mnt/keydisk/rest-server-password | tr -d '\r\n\t ')"
+runbackup "rest:https://nas:$REST_SERVER_PASSWORD@icefox.doridian.net:nas/main"
