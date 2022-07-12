@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 umount /mnt/gocryptfs/nas
 gocryptfs --reverse --passfile /mnt/keydisk/gocryptfs-icefox --exclude torrent --exclude usenet /mnt/zhdd/nas /mnt/gocryptfs/nas
 
