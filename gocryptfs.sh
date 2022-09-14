@@ -2,8 +2,8 @@
 
 set -ex
 
-#SYNC_COMMAND="fpsync -n 8 -f 1000  -s $((100 * 1024 * 1024)) -o '-aogXAE --numeric-ids'"
-SYNC_COMMAND="rsync --delete -avogXAE --numeric-ids --progress"
+#SYNC_COMMAND="fpsync -n 8 -f 1000  -s $((100 * 1024 * 1024)) -o '-aE --numeric-ids'"
+SYNC_COMMAND="rsync --delete -avE --numeric-ids --progress"
 
 gcsync() {
 	DS="$1"
