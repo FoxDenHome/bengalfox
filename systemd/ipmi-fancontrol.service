@@ -6,7 +6,7 @@ StartLimitIntervalSec=0
 Type=simple
 Restart=always
 RestartSec=1
-ExecStart=/usr/bin/perl /opt/nas/ipmi-fancontrol.pl
+ExecStart=/usr/bin/perl /opt/bengalfox/ipmi-fancontrol.pl
 ExecStopPost=/usr/bin/ipmitool raw 0x30 0x45 0x01 0x0
 
 [Install]
