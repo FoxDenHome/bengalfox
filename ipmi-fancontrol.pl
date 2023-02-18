@@ -25,21 +25,21 @@ my $seconds_to_sleep    = 5; # Number of seconds to sleep between update loops
 my $ipmi_cmd_listall    = "sdr list full";
 
 # CPU Temp -> Fan Speed Mappings
-#my %cpu_temp_to_fan_speed;
-#   $cpu_temp_to_fan_speed{80} = 0x64;
-#   $cpu_temp_to_fan_speed{75} = 0x56;
-#   $cpu_temp_to_fan_speed{70} = 0x48;
-#   $cpu_temp_to_fan_speed{60} = 0x40;
-#   $cpu_temp_to_fan_speed{55} = 0x32;
-#   $cpu_temp_to_fan_speed{50} = 0x16;
-#   $cpu_temp_to_fan_speed{10} = 0x8;
-
 my %cpu_temp_to_fan_speed;
-   $cpu_temp_to_fan_speed{75} = 0xff;
-   $cpu_temp_to_fan_speed{70} = 0xa3;
-   $cpu_temp_to_fan_speed{65} = 0x32; # 0x80 0x32
-   $cpu_temp_to_fan_speed{55} = 0x16; # 0x38 0x16
-   $cpu_temp_to_fan_speed{10} = 0x8; # 0x14 0x8
+   $cpu_temp_to_fan_speed{80} = 0x64;
+   $cpu_temp_to_fan_speed{75} = 0x56;
+   $cpu_temp_to_fan_speed{70} = 0x48;
+   $cpu_temp_to_fan_speed{60} = 0x40;
+   $cpu_temp_to_fan_speed{55} = 0x32;
+   $cpu_temp_to_fan_speed{50} = 0x16;
+   $cpu_temp_to_fan_speed{10} = 0x08;
+
+#my %cpu_temp_to_fan_speed;
+#   $cpu_temp_to_fan_speed{75} = 0xff;
+#   $cpu_temp_to_fan_speed{70} = 0xa3;
+#   $cpu_temp_to_fan_speed{65} = 0x32; # 0x80 0x32
+#   $cpu_temp_to_fan_speed{55} = 0x16; # 0x38 0x16
+#   $cpu_temp_to_fan_speed{10} = 0x8; # 0x14 0x8
 
 # Below this line follows the actual implementation of the script
 
@@ -47,16 +47,18 @@ my $g_current_fan_duty_cycle = 0;
 my $g_current_cpu_temp = 0;
 my $g_last_set_cpu_temp = 0;
 
-`ipmitool raw 0x30 0x91 0x5A 0x03 0x00 0x00`;
-`ipmitool raw 0x30 0x91 0x5A 0x03 0x01 0x00`;
-`ipmitool raw 0x30 0x91 0x5A 0x03 0x02 0x00`;
-`ipmitool raw 0x30 0x91 0x5A 0x03 0x03 0x00`;
+#`ipmitool raw 0x30 0x91 0x5A 0x03 0x00 0x00`;
+#`ipmitool raw 0x30 0x91 0x5A 0x03 0x01 0x00`;
+#`ipmitool raw 0x30 0x91 0x5A 0x03 0x02 0x00`;
+#`ipmitool raw 0x30 0x91 0x5A 0x03 0x03 0x00`;
 
 sub Internal_DoSetFanSpeed
 {
   my ( $fan_speed ) = @_;
-  `timeout 5 ipmitool raw 0x30 0x91 0x5A 0x3 0x11 $fan_speed`;
-  `timeout 5 ipmitool raw 0x30 0x91 0x5A 0x3 0x10 $fan_speed`;
+  #`timeout 5 ipmitool raw 0x30 0x91 0x5A 0x3 0x11 $fan_speed`;
+  #`timeout 5 ipmitool raw 0x30 0x91 0x5A 0x3 0x10 $fan_speed`;
+  `timeout 5 ipmitool raw 0x30 0x70 0x66 0x01 0x00 $fan_speed`;
+  `timeout 5 ipmitool raw 0x30 0x70 0x66 0x01 0x01 $fan_speed`;
 }
 
 sub dprint
@@ -168,7 +170,7 @@ sub UpdateFanSpeed
 
 #dprint "Setting Fan mode to FULL SPEED.\n";
 # Ensure Fan Mode is set to Full Speed
-#`ipmitool raw 0x30 0x45 0x01 0x01`;
+`ipmitool raw 0x30 0x45 0x01 0x01`;
 
 #`ipmitool raw 0x30 0x45 0x01 0x01`;
 
