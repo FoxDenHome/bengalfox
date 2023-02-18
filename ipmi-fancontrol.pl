@@ -34,13 +34,6 @@ my %cpu_temp_to_fan_speed;
    $cpu_temp_to_fan_speed{50} = 0x16;
    $cpu_temp_to_fan_speed{10} = 0x08;
 
-#my %cpu_temp_to_fan_speed;
-#   $cpu_temp_to_fan_speed{75} = 0xff;
-#   $cpu_temp_to_fan_speed{70} = 0xa3;
-#   $cpu_temp_to_fan_speed{65} = 0x32; # 0x80 0x32
-#   $cpu_temp_to_fan_speed{55} = 0x16; # 0x38 0x16
-#   $cpu_temp_to_fan_speed{10} = 0x8; # 0x14 0x8
-
 # Below this line follows the actual implementation of the script
 
 my $g_current_fan_duty_cycle = 0;
@@ -168,11 +161,9 @@ sub UpdateFanSpeed
 
 }
 
-#dprint "Setting Fan mode to FULL SPEED.\n";
+dprint "Setting Fan mode to FULL SPEED.\n";
 # Ensure Fan Mode is set to Full Speed
 `ipmitool raw 0x30 0x45 0x01 0x01`;
-
-#`ipmitool raw 0x30 0x45 0x01 0x01`;
 
 while( 1 )
 {
