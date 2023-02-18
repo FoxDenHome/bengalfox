@@ -2,7 +2,7 @@
 
 runx() {
     export REPO="$1"
-    /opt/backup/run.sh /mnt/zssd/e621 /mnt/zssd/docker /var/lib/docker/volumes /boot/efi /mnt/zhdd/nashome /
+    /opt/backup/run.sh /mnt/zhdd/e621/db /mnt/zhdd/docker /var/lib/docker/volumes /boot/efi /mnt/zhdd/nashome /
 }
 
 runx 'b2:bengalfox-backups:/'

@@ -9,5 +9,3 @@ fixperms() {
 
 cd /mnt/zhdd/nas
 fixperms
-cd /mnt/zssd/nas
-fixperms
