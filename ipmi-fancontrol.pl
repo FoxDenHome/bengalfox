@@ -26,13 +26,11 @@ my $ipmi_cmd_listall    = "sdr list full";
 
 # CPU Temp -> Fan Speed Mappings
 my %cpu_temp_to_fan_speed;
-   $cpu_temp_to_fan_speed{80} = 0x64;
-   $cpu_temp_to_fan_speed{75} = 0x56;
-   $cpu_temp_to_fan_speed{70} = 0x48;
-   $cpu_temp_to_fan_speed{60} = 0x40;
-   $cpu_temp_to_fan_speed{55} = 0x32;
-   $cpu_temp_to_fan_speed{50} = 0x16;
-   $cpu_temp_to_fan_speed{10} = 0x08;
+   $cpu_temp_to_fan_speed{75} = 0x64;
+   $cpu_temp_to_fan_speed{70} = 0x3f;
+   $cpu_temp_to_fan_speed{65} = 0x13;
+   $cpu_temp_to_fan_speed{55} = 0x08;
+   $cpu_temp_to_fan_speed{10} = 0x03;
 
 # Below this line follows the actual implementation of the script
 
