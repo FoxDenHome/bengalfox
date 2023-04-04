@@ -1,7 +1,7 @@
 #!/bin/bash
 set -xe
 
-modprobe nvidia_uvm nvidia_drm nvidia_modeset nvidia
+modprobe nvidia_uvm nvidia_drm nvidia_modeset nvidia || true
 sleep 1
 
 export DISPLAY=':0'
@@ -24,4 +24,4 @@ wait
 systemctl start superfan
 
 sleep 1
-rmmod nvidia_uvm nvidia_drm nvidia_modeset nvidia
+rmmod nvidia_uvm nvidia_drm nvidia_modeset nvidia || true
