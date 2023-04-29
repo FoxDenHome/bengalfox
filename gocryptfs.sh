@@ -13,3 +13,4 @@ gcsync() {
 }
 
 gcsync zhdd
+gcsync zssd
