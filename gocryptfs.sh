@@ -12,5 +12,5 @@ gcsync() {
 	eval $SYNC_COMMAND "/mnt/gocryptfs/$DS/" "bengalfox@icefox.doridian.net:/mnt/ztank/bengalfox/$DS/"
 }
 
-gcsync zhdd
 gcsync zssd
+gcsync zhdd
