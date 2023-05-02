@@ -9,7 +9,7 @@ gcsync() {
 	DS="$1"
 	mkdir -p "/mnt/gocryptfs/$DS"
 	mount | grep -qF "/mnt/gocryptfs/$DS" || gocryptfs --reverse --passfile /mnt/keydisk/gocryptfs-icefox --exclude nas/torrent --exclude nas/usenet "/mnt/$DS" "/mnt/gocryptfs/$DS"
-	eval $SYNC_COMMAND "/mnt/gocryptfs/$DS/" "nas@icefox.doridian.net:/mnt/zhdd/nas/$DS/"
+	eval $SYNC_COMMAND "/mnt/gocryptfs/$DS/" "bengalfox@icefox.doridian.net:/mnt/ztank/bengalfox/$DS/"
 }
 
 gcsync zhdd
