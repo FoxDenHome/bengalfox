@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/opt/islandfox/restic.sh /opt/backup/prune.sh
+/opt/bengalfox/restic.sh /opt/backup/prune.sh
