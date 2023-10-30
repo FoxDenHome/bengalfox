@@ -1,6 +1,7 @@
 #!/bin/sh
 
 docker stop steam_steam-headless_1
+docker stop hashtopolis-agent_agent_1
 docker stop jupyter_notebook_1
 docker stop nas_plex_1
 
@@ -15,5 +16,6 @@ modprobe nvidia_modeset
 modprobe nvidia
 
 docker start steam_steam-headless_1
+docker start hashtopolis-agent_agent_1
 docker start jupyter_notebook_1
 docker start nas_plex_1
