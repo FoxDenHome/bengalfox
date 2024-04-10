@@ -22,3 +22,4 @@ syncoid_zhdd nas
 syncoid_zhdd nashome
 
 syncoid_zssd docker
+syncoid_zssd nas
