@@ -16,7 +16,7 @@ syncoid_zssd() {
 
 syncoid_zhdd dav
 syncoid_zhdd docker
-#syncoid_zhdd e621
+syncoid_zhdd e621
 syncoid_zhdd kiwix
 syncoid_zhdd nas
 syncoid_zhdd nashome
