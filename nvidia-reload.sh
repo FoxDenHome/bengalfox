@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# * * * * * /bin/sh -c '(nvidia-smi -L | grep -qF "GPU 0") || /opt/bengalfox/nvidia-reload.sh'
+
 docker stop hashtopolis-agent-gpu-1
 docker stop nas-jellyfin-1
 docker stop ollama-ollama-1
