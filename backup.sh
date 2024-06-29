@@ -3,7 +3,7 @@
 /opt/bengalfox/restic.sh /opt/backup/run.sh /mnt/zhdd/docker /var/lib/docker/*/volumes /boot/efi /mnt/zhdd/nashome /
 
 backup_syncoid() {
-    syncoid --no-privilege-elevation "$1/ROOT/$2" "bengalfox@icefox.doridian.net:ztank/ROOT/$1/$2"
+    syncoid --prune-snapshots --no-privilege-elevation "$1/ROOT/$2" "bengalfox@icefox.doridian.net:ztank/ROOT/$1/$2"
 }
 
 syncoid_zhdd() {
