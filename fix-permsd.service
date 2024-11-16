@@ -1,0 +1,12 @@
+[Unit]
+Description=Fix Perms forever
+After=network.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/opt/bengalfox/fix-permsd.sh
+TimeoutStartSec=300
+
+[Install]
+WantedBy=multi-user.target
