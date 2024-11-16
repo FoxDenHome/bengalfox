@@ -1,6 +1,6 @@
 [Unit]
 Description=Fix Perms forever
-After=network.target
+After=remote-fs.target local-fs.target
 
 [Service]
 Type=simple
