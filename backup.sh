@@ -14,8 +14,8 @@ syncoid_zssd() {
     backup_syncoid zssd "$1"
 }
 
-syncoid_zhdd dav
 syncoid_zhdd docker
+syncoid_zhdd docker/restic
 syncoid_zhdd e621
 #syncoid_zhdd furaffinity
 syncoid_zhdd kiwix
