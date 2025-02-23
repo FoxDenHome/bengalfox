@@ -1,12 +1,14 @@
 #!/bin/sh
 
 runx() {
-    export REPO="$1"
-    export CMD="$2"
-    shift 2
+    export CMD="$1"
+    shift 1
     "$CMD" "$@"
 }
 
-runx 's3:s3.us-west-001.backblazeb2.com/bengalfox-backups' "$@"
+export RESTIC_REPOSITORY='s3:s3.us-west-001.backblazeb2.com/bengalfox-backups'
+runx "$@"
+
 REST_SERVER_PASSWORD="$(cat /mnt/keydisk/rest-server-password | tr -d '\r\n\t ')"
-runx "rest:https://bengalfox:$REST_SERVER_PASSWORD@icefox.doridian.net:8000/bengalfox/main" "$@"
+export RESTIC_REPOSITORY="rest:https://bengalfox:$REST_SERVER_PASSWORD@icefox.doridian.net:8000/bengalfox/main"
+runx "$@"
