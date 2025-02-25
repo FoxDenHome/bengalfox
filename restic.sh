@@ -10,5 +10,5 @@ export RESTIC_REPOSITORY='s3:s3.us-west-001.backblazeb2.com/bengalfox-backups'
 runx "$@"
 
 REST_SERVER_PASSWORD="$(cat /mnt/keydisk/rest-server-password | tr -d '\r\n\t ')"
-export RESTIC_REPOSITORY="rest:https://bengalfox:$REST_SERVER_PASSWORD@icefox-ext.doridian.net:8000/bengalfox/main"
+export RESTIC_REPOSITORY="rest:https://bengalfox:$REST_SERVER_PASSWORD@restic.doridian.net:8000/bengalfox/main"
 runx "$@"
